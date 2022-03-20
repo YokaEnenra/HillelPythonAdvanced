@@ -54,7 +54,7 @@ def decryption_page():
 def missing_page(name):
     """
         This is missing page of encryption and decryption website, that tells user that page he`s trying
-        to access is missing and he should try another one
+        to access is missing, and he should try another one
 
         :param name:  Every missing website page
         :return: Help string
