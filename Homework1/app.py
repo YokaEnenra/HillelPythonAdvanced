@@ -1,5 +1,3 @@
-import binascii
-
 from flask import *
 from cryptography.fernet import *
 
@@ -13,22 +11,20 @@ def main_page():
     """
         This is main page of encryption and decryption website, that tells user about its capabilities
 
-        :return:
-        Web-site description string
+        :return: Web-site description string
     """
     return "It`s nothing interesting here, you should try out our encryption and decryption pages. Like " \
            "/encrypt?string='your message' or /decrypt?string='encryption token' "
 
 
 @app.route('/encrypt')
-def encryption_page():  # put application's code here
+def encryption_page():
     """
         This is encryption page written with and for flask library. It's needed to encrypt text using python
         cryptography fernet library
 
-        :return:
-        String: "Encrypted result: <encryption_token>"
-        """
+        :return: html page with encryption token or error message
+    """
     if not request.args.get('string'):
         return "Wrong syntax buddy, try to use ?string='your message' instead"
     else:
@@ -42,8 +38,7 @@ def decryption_page():
         This is decryption page written with and for flask library. It's needed to decrypt text encrypted with python
         cryptography fernet library
 
-        :return:
-        String: "Decrypted result: <decrypted_text>"
+        :return: html page with decrypted text or error message
     """
     if not request.args.get('string'):
         return "Wrong syntax buddy, try to use ?string='encryption token' instead"
@@ -61,11 +56,9 @@ def missing_page(name):
         This is missing page of encryption and decryption website, that tells user that page he`s trying
         to access is missing and he should try another one
 
-        :param name:
-        Every missing website page
+        :param name:  Every missing website page
+        :return: Help string
 
-        :return:
-        Help string
     """
     if name:
         return "We don`t have such page still, try to use: /encrypt?string='your " \
