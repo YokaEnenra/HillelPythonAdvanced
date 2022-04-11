@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog list</title>
+</head>
+<body>
+<b> Here's all the blogs we have for now</b>
+<ol type="1">
+    {% if blogs%}
+        {% for blog in blogs %}
+            <li>Blog: {{ blog[1] }};<br>Description: {{ blog[2] }};<br>Writing date: {{ blog[3] }}<br>Blog id:{{ blog[0] }};
+        {% endfor %}
+    {% else %}
+        <li>Sorry, but there are no any blogs for now</li>
+    {% endif %}
+</ol>
+</body>
+</html>
