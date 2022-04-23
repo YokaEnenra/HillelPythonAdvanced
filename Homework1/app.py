@@ -1,5 +1,6 @@
-from flask import *
-from cryptography.fernet import *
+
+from flask import Flask, request, render_template
+from cryptography.fernet import Fernet, InvalidToken
 
 app = Flask(__name__)
 key = Fernet.generate_key()
