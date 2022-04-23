@@ -1,5 +1,5 @@
 from django.core.validators import int_list_validator
-from django.db.models import *
+from django.db.models import Model, CharField, PositiveIntegerField, DateTimeField, BooleanField, IntegerField
 
 
 class Person(Model):
