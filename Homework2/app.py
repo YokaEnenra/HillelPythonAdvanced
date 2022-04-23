@@ -2,7 +2,8 @@
 # CREATE TABLE POSTS(ID INTEGER PRIMARY KEY AUTOINCREMENT,Title varchar(200),Description varchar(1000),Date text);
 
 import sqlite3
-from flask import request, Flask, render_template, redirect
+
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 

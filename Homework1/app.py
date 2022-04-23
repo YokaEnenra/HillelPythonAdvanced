@@ -1,4 +1,3 @@
-
 from flask import Flask, request, render_template
 from cryptography.fernet import Fernet, InvalidToken
 
