@@ -98,7 +98,7 @@ def delete_blog(blog_id: int):
         return False
     connection = sqlite3.connect("blog.db")
     cursor = connection.cursor()
-    cursor.execute(f"DELETE FROM POSTS WHERE ID = ?", (blog_id,))
+    cursor.execute("DELETE FROM POSTS WHERE ID = ?", (blog_id,))
     connection.commit()
     connection.close()
     return True
@@ -164,7 +164,7 @@ def edit_blog_title(new_blog_title: str, blog_id: int):
         return False
     connection = sqlite3.connect("blog.db")
     cursor = connection.cursor()
-    cursor.execute(f"UPDATE POSTS SET Title = ? WHERE ID = ?", (new_blog_title, blog_id))
+    cursor.execute("UPDATE POSTS SET Title = ? WHERE ID = ?", (new_blog_title, blog_id))
     connection.commit()
     connection.close()
     return True
@@ -183,7 +183,7 @@ def edit_blog_desc(new_blog_desc: str, blog_id: int):
         return False
     connection = sqlite3.connect("blog.db")
     cursor = connection.cursor()
-    cursor.execute(f"UPDATE POSTS SET Description = ? WHERE ID = ?", (new_blog_desc, blog_id))
+    cursor.execute("UPDATE POSTS SET Description = ? WHERE ID = ?", (new_blog_desc, blog_id))
     connection.commit()
     connection.close()
     return True
